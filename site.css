@@ -616,7 +616,7 @@ em{font-style:normal}
 }
 
 /* ============ 시안 스위처 ============ */
-.ts{position:fixed;left:20px;bottom:24px;z-index:75;display:flex;align-items:center;gap:4px;padding:5px;border-radius:999px;background:rgba(11,20,16,.88);color:#fff;box-shadow:0 12px 30px -10px rgba(0,0,0,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:13px}
+.ts{position:fixed;left:20px;bottom:24px;z-index:75;display:flex;height:auto;width:max-content;white-space:nowrap;align-items:center;gap:4px;padding:5px;border-radius:999px;background:rgba(11,20,16,.88);color:#fff;box-shadow:0 12px 30px -10px rgba(0,0,0,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:13px}
 .ts>span{padding:0 8px 0 10px;font-weight:700;opacity:.7}
 .ts-btn{height:34px;padding:0 12px;border-radius:999px;font-weight:700;color:rgba(255,255,255,.75)}
 .ts-btn.on{background:#fff;color:#0B1410}
@@ -865,8 +865,9 @@ em{font-style:normal}
 @media (max-width:760px){
   .bal-delta{position:static;height:auto;display:inline-block;margin-left:8px;font-size:14px;vertical-align:middle}
   .bal-amt{display:inline-block;vertical-align:middle}
-  .ts{bottom:16px;transition:bottom .3s}
+  .ts,.hd.solid~.ts,.ts.up{top:auto;bottom:16px;height:auto;width:max-content;max-width:calc(100vw - 24px);white-space:nowrap;transition:bottom .3s}
   .qfix.show~.ts{bottom:86px}
+  .ts-btn{white-space:nowrap;flex-shrink:0}
 }
 
 .final-media img{width:100%;height:100%;object-fit:cover;object-position:70% 50%}

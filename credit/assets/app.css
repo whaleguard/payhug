@@ -582,3 +582,8 @@ details.mini summary::-webkit-details-marker{display:none}
   .calendar .dc small{display:none}
   .card{padding:16px}
 }
+
+/* 정적 미리보기 안내 바: 모바일에서는 상단 데모 띠 자리로 */
+@media (max-width:680px){
+  #static-bar{top:0 !important;bottom:auto !important;left:0 !important;right:0 !important;transform:none !important;border-radius:0 !important;justify-content:center !important;padding:5px 10px !important;font-size:11px !important;box-shadow:none !important}
+}

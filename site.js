@@ -7,9 +7,9 @@ const mqMobile=matchMedia('(max-width:760px)');
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- theme (시안 1/2/3) ---------- */
-const THEMES={'1':'light','2':'forest','3':'ivory'};
+const THEMES={'1':'b1','2':'forest','3':'b5','4':'b2'};
 function setTheme(k){
-  if(!THEMES[k]) k='2';
+  if(!THEMES[k]) k='1';
   document.documentElement.dataset.theme=THEMES[k];
   $$('.ts-btn').forEach(b=>b.classList.toggle('on',b.dataset.t===k));
   try{const u=new URL(location.href);u.searchParams.set('t',k);history.replaceState(null,'',u)}catch(e){}
@@ -259,4 +259,39 @@ const mq=$('#mqTrack'); if(mq){mq.innerHTML+=mq.innerHTML;$$('img',mq).forEach((
 /* ---------- footer pSEO links ---------- */
 const seo=$('#seoLinks');
 if(seo&&window.PAYHUG_SEO){seo.innerHTML=window.PAYHUG_SEO.map(([h,t])=>`<a href="${h}">${t}</a>`).join('')}
+})();
+
+/* ---------- 빠른 가입 상담 (히어로 아래) ---------- */
+(function(){
+  const $=(s)=>document.querySelector(s);
+  const f=$('#qcForm'); if(!f) return;
+  const GU={
+    '부산':['해운대구','수영구','남구','부산진구','동래구','연제구','금정구','북구','사상구','사하구','서구','중구','동구','영도구','강서구','기장군'],
+    '서울':['강남구','서초구','송파구','강동구','마포구','영등포구','용산구','성동구','광진구','동대문구','중랑구','성북구','강북구','도봉구','노원구','은평구','서대문구','종로구','중구','양천구','강서구','구로구','금천구','동작구','관악구']
+  };
+  const sido=$('#qcSido'), gu=$('#qcGu'), guT=$('#qcGuText'), tel=$('#qcTel'), msg=$('#qcMsg');
+  function fillGu(){
+    const list=GU[sido.value];
+    if(list){gu.hidden=false;guT.hidden=true;gu.innerHTML=list.map(g=>`<option>${g}</option>`).join('');}
+    else{gu.hidden=true;guT.hidden=false;guT.value='';}
+  }
+  sido.addEventListener('change',fillGu); fillGu();
+  tel.addEventListener('input',()=>{let d=tel.value.replace(/\D/g,'').slice(0,11);tel.value=d.length<4?d:d.length<8?d.slice(0,3)+'-'+d.slice(3):d.slice(0,3)+'-'+d.slice(3,d.length-4)+'-'+d.slice(-4)});
+  f.querySelectorAll('input,select').forEach(el=>el.addEventListener('input',()=>{el.closest('.qf')?.classList.remove('bad');msg.textContent='';msg.className='qc-msg'}));
+  $('#qcAgree').addEventListener('change',e=>e.target.closest('.qc-agree').classList.remove('bad'));
+  f.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const region=sido.value+' '+(gu.hidden?guT.value.trim():gu.value);
+    const biz=$('#qcBiz').value, shop=$('#qcShop').value.trim(), t=tel.value.replace(/\D/g,'');
+    let ok=true; const bad=(sel,b)=>{$(sel).closest('.qf').classList.toggle('bad',b); if(b) ok=false;};
+    bad('#qcSido', gu.hidden && !guT.value.trim()); bad('#qcBiz',!biz); bad('#qcShop',shop.length<1); bad('#qcTel',!/^01[016789]\d{7,8}$/.test(t));
+    const ag=$('#qcAgree'); if(!ag.checked){ok=false;ag.closest('.qc-agree').classList.add('bad');}
+    if(!ok){msg.className='qc-msg err';msg.textContent=!ag.checked&&f.querySelectorAll('.qf.bad').length===0?'개인정보 수집·이용에 동의해 주세요.':'빨간 칸을 확인해 주세요.';return;}
+    const btn=$('#qcSubmit'); btn.disabled=true; btn.textContent='접수 중…';
+    const data={type:'quick',region,biz,shop,tel:t,page:location.pathname,at:new Date().toISOString()};
+    try{ if(window.PAYHUG_CONSULT_ENDPOINT){await fetch(window.PAYHUG_CONSULT_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});} }catch(err){}
+    try{const k='payhug_consults';const a=JSON.parse(localStorage.getItem(k)||'[]');a.push(data);localStorage.setItem(k,JSON.stringify(a.slice(-20)))}catch(_){}
+    btn.disabled=false; btn.textContent='신청 완료';
+    f.classList.add('sent'); msg.className='qc-msg ok'; msg.textContent=`${region} · ${shop} 상담 신청이 접수되었습니다. 상담사가 곧 연락드립니다.`;
+  });
 })();

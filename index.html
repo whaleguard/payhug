@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" data-theme="forest" data-default="2">
+<html lang="ko" data-theme="b1" data-default="1">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -14,14 +14,13 @@
 <meta name="theme-color" content="#0F1A14">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="site.css?v=5">
+<link rel="stylesheet" href="site.css?v=6">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FinancialService","name":"페이허그(Payhug) 선정산","url":"https://whaleguard.github.io/payhug/","description":"자영업 사장님의 카드·배달앱 매출을 다음 날 먼저 입금하는 선정산 서비스","provider":{"@type":"Organization","name":"투게더허그"},"areaServed":"KR"}
 </script>
 </head>
 <body>
 
-<a class="topbar" href="#guide"><span class="play"><svg viewBox="0 0 8 8"><path d="M0 0l8 4-8 4z" fill="currentColor"/></svg></span><b>가입 방법, 3분 영상으로 보기</b><span class="tb-arrow">→</span></a>
 
 <header class="hd" id="hd">
   <div class="wrap">
@@ -88,6 +87,43 @@
     </div>
   </div>
   <p class="hero-note wrap">화면 속 금액과 알림은 이해를 돕기 위한 예시입니다.</p>
+</section>
+
+
+<!-- ============ QUICK CONSULT (히어로 아래) ============ -->
+<section class="qc" id="quick" aria-labelledby="qcT">
+  <div class="wrap">
+    <form class="qc-box" id="qcForm" novalidate>
+      <div class="qc-head">
+        <h2 id="qcT">빠른 가입 상담</h2>
+        <p>남겨 주시면 상담사가 전화로 가입을 도와드립니다.</p>
+      </div>
+      <div class="qc-fields">
+        <div class="qf qf-region"><label for="qcSido">지역</label>
+          <div class="qf-pair"><select id="qcSido"><option>서울</option><option selected>부산</option><option>대구</option><option>인천</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>경기</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option></select><select id="qcGu" aria-label="구·군"></select><input id="qcGuText" type="text" placeholder="시·군·구" aria-label="시·군·구" hidden></div></div>
+        <div class="qf"><label for="qcBiz">업종</label>
+          <select id="qcBiz"><option value="">선택</option><option>음식점</option><option>카페</option><option>배달 전문점</option><option>치킨·피자</option><option>베이커리</option><option>주점</option><option>미용·뷰티</option><option>소매</option><option>기타</option></select></div>
+        <div class="qf"><label for="qcShop">상호</label><input id="qcShop" type="text" placeholder="예: 해운대 고래카페" maxlength="40" autocomplete="organization"></div>
+        <div class="qf"><label for="qcTel">연락처</label><input id="qcTel" type="tel" inputmode="numeric" placeholder="010-0000-0000" maxlength="13" autocomplete="tel"></div>
+        <button class="btn btn-primary qc-btn" type="submit" id="qcSubmit">상담 신청</button>
+      </div>
+      <div class="qc-foot">
+        <label class="qc-agree"><input type="checkbox" id="qcAgree"> <span>[필수] 상담을 위한 개인정보(지역·업종·상호·연락처) 수집·이용 동의 · 상담 완료 후 1년 보관</span></label>
+        <p class="qc-msg" id="qcMsg" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ 3분 영상 배너 ============ -->
+<section class="vb" aria-label="가입 방법 영상">
+  <div class="wrap">
+    <a class="vb-box" href="#guide">
+      <span class="vb-thumb"><img src="p04.jpg" alt="" loading="lazy"><span class="vb-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="vb-time num">3:00</span></span>
+      <span class="vb-tx"><b>가입 방법, 3분 영상으로 보기</b><span>본인 확인부터 정산 계좌 변경까지 휴대폰 화면 그대로 따라 해 보세요.</span></span>
+      <span class="vb-go">영상 보기<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg></span>
+    </a>
+  </div>
 </section>
 
 <!-- ============ KEY NUMBERS ============ -->
@@ -393,9 +429,9 @@
   </div>
 </div>
 
-<div class="ts" id="themeSwitch" role="group" aria-label="시안 선택"><span>시안</span><button class="ts-btn" data-t="1" type="button">1안 라이트</button><button class="ts-btn" data-t="2" type="button">2안 포레스트</button><button class="ts-btn" data-t="3" type="button">3안 아이보리</button></div>
+<div class="ts" id="themeSwitch" role="group" aria-label="시안 선택"><span>시안</span><button class="ts-btn" data-t="1" type="button"><i class="sw" style="background:#00918E;box-shadow:3px -3px 0 -1px #E6004E"></i>1<b class="tn"> 하나형</b></button><button class="ts-btn" data-t="2" type="button"><i class="sw" style="background:#173322"></i>2<b class="tn"> 포레스트</b></button><button class="ts-btn" data-t="3" type="button"><i class="sw" style="background:#111;border:2px solid #C9A55C"></i>3<b class="tn"> 블랙골드</b></button><button class="ts-btn" data-t="4" type="button"><i class="sw" style="background:#FF6A13"></i>4<b class="tn"> 오렌지</b></button></div>
 <script src="seo-links.js"></script>
 <script>window.PAYHUG_CONSULT_ENDPOINT = "";</script>
-<script src="site.js?v=4"></script>
+<script src="site.js?v=6"></script>
 </body>
 </html>

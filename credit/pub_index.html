@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>페이허그 외상몰 · 페이허그 외상몰</title>
+<meta name="theme-color" content="#00918E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/app.css">
+</head><body>
+<div class="demo-strip">데모 환경 · 업무일 <b>11월 16일(월)</b> <span class="long">· 외부 연동(본인인증·CB·페이허그)은 가짜 응답입니다</span></div><header class="m-hd"><div class="in">
+  <a class="logo" href="pub_index.html"><span class="mk"></span>Payhug<small>외상몰</small></a>
+      <a class="btn btn-sm btn-p" style="margin-left:auto" href="pub_login.html">로그인</a>
+  </div></header>
+<main class="m-main">
+<section class="lp">
+  <div>
+    <h1>필요한 물건은 <em>오늘</em> 받고,<br>대금은 정산금에서<br>20영업일 나눠서.</h1>
+    <p class="lead">페이허그 선정산을 쓰는 사장님 전용 외상몰입니다. 식자재·포장재·소모품을 외상으로 주문하면, 다음 영업일부터 매일 정산금에서 조금씩 자동으로 빠집니다.</p>
+    <div class="pts">
+      <div><b>20영업일 분할</b><span>하루 부담을 작게</span></div>
+      <div><b>자동 차감</b><span>페이허그 정산금에서</span></div>
+      <div><b>휴대폰 가입</b><span>본인인증 후 바로 심사</span></div>
+      <div><b>한도 안에서</b><span>심사 후 한도 부여</span></div>
+    </div>
+    <div class="row"><a class="btn btn-p btn-lg" href="pub_login.html">휴대폰으로 시작하기</a><a class="btn btn-line btn-lg" href="a_admin.html">관리자 화면</a></div>
+  </div>
+  <div class="lp-visual">
+    <p class="t">예시 · 300,000원 외상 구매</p>
+    <p class="big num">하루 15,000원</p>
+    <p class="note">다음 영업일부터 20영업일 동안 정산금에서 차감</p>
+    <div class="lp-days"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+    <p class="note" style="margin-top:10px">6회차 완료 · 남은 14회차 210,000원</p>
+  </div>
+</section>
+</main>
+<script>document.querySelectorAll('[data-confirm]').forEach(f=>f.addEventListener('submit',e=>{if(!confirm(f.dataset.confirm))e.preventDefault()}));</script>
+<div id="static-bar" style="position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:9999;background:#191F28;color:#fff;font:600 13px Pretendard,sans-serif;padding:9px 14px;border-radius:10px;display:flex;gap:12px;align-items:center;box-shadow:0 6px 20px rgba(0,0,0,.18);white-space:nowrap">정적 미리보기 · 저장·결제는 서버 설치 후 동작 <a href="index.html" style="color:#7FE0DC">화면 목록 →</a></div><script>document.addEventListener('submit',e=>{e.preventDefault();const ac=(e.target.getAttribute('action')||'');if(//admin/login$/.test(ac)){location.href='a_admin.html';return}if(/^/login$/.test(ac)){location.href='m_my.html';return}let t=document.getElementById('st-toast');if(!t){t=document.createElement('div');t.id='st-toast';t.style.cssText='position:fixed;left:50%;top:20px;transform:translateX(-50%);z-index:10000;background:#00807D;color:#fff;font:600 14px Pretendard,sans-serif;padding:12px 16px;border-radius:10px';document.body.appendChild(t)}t.textContent='미리보기 화면이라 실제로 저장되지 않습니다. 서버 설치 후 동작합니다.';t.style.display='block';clearTimeout(window.__tt);window.__tt=setTimeout(()=>t.style.display='none',2600)},true);document.querySelectorAll('[data-confirm]').forEach(f=>f.removeAttribute('data-confirm'));</script></body></html>

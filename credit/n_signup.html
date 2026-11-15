@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>가입하기 · 페이허그 외상몰</title>
+<meta name="theme-color" content="#00918E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/app.css">
+</head><body>
+<div class="demo-strip">데모 환경 · 업무일 <b>11월 16일(월)</b> <span class="long">· 외부 연동(본인인증·CB·페이허그)은 가짜 응답입니다</span></div><header class="m-hd"><div class="in">
+  <a class="logo" href="pub_index.html"><span class="mk"></span>Payhug<small>외상몰</small></a>
+      <a class="btn btn-sm btn-p" style="margin-left:auto" href="pub_login.html">로그인</a>
+  </div></header>
+<main class="m-main">
+<div class="m-narrow">
+  <div class="steps"><div class="on"></div><div></div><div></div></div>
+  <h1 class="m-title">가입하기</h1>
+  <p class="m-sub">010-9000-9000 인증이 완료되었습니다.</p>
+  <form method="post" action="/signup" class="card stack"><input type="hidden" name="_csrf" value="83ee26a0bc0d05295331947caf575260">    <div class="field"><label for="owner_name">대표자 성함</label><input class="inp" id="owner_name" name="owner_name" maxlength="20" required></div>
+    <label class="check"><input type="checkbox" name="agree" value="1"> <span>[필수] 이용약관, 개인정보 수집·이용(본인인증 정보·연락처), 고유식별정보 처리에 동의합니다.</span></label>
+    <button class="btn btn-p btn-lg btn-block" type="submit">다음: 외상 이용 신청</button>
+  </form>
+</div>
+</main>
+<script>document.querySelectorAll('[data-confirm]').forEach(f=>f.addEventListener('submit',e=>{if(!confirm(f.dataset.confirm))e.preventDefault()}));</script>
+<div id="static-bar" style="position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:9999;background:#191F28;color:#fff;font:600 13px Pretendard,sans-serif;padding:9px 14px;border-radius:10px;display:flex;gap:12px;align-items:center;box-shadow:0 6px 20px rgba(0,0,0,.18);white-space:nowrap">정적 미리보기 · 저장·결제는 서버 설치 후 동작 <a href="index.html" style="color:#7FE0DC">화면 목록 →</a></div><script>document.addEventListener('submit',e=>{e.preventDefault();const ac=(e.target.getAttribute('action')||'');if(//admin/login$/.test(ac)){location.href='a_admin.html';return}if(/^/login$/.test(ac)){location.href='m_my.html';return}let t=document.getElementById('st-toast');if(!t){t=document.createElement('div');t.id='st-toast';t.style.cssText='position:fixed;left:50%;top:20px;transform:translateX(-50%);z-index:10000;background:#00807D;color:#fff;font:600 14px Pretendard,sans-serif;padding:12px 16px;border-radius:10px';document.body.appendChild(t)}t.textContent='미리보기 화면이라 실제로 저장되지 않습니다. 서버 설치 후 동작합니다.';t.style.display='block';clearTimeout(window.__tt);window.__tt=setTimeout(()=>t.style.display='none',2600)},true);document.querySelectorAll('[data-confirm]').forEach(f=>f.removeAttribute('data-confirm'));</script></body></html>

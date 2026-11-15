@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>외상 이용 신청 · 페이허그 외상몰</title>
+<meta name="theme-color" content="#00918E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/app.css">
+</head><body>
+<div class="demo-strip">데모 환경 · 업무일 <b>11월 16일(월)</b> <span class="long">· 외부 연동(본인인증·CB·페이허그)은 가짜 응답입니다</span></div><header class="m-hd"><div class="in">
+  <a class="logo" href="pub_index.html"><span class="mk"></span>Payhug<small>외상몰</small></a>
+      <form method="post" action="/logout" style="margin-left:auto"><input type="hidden" name="_csrf" value="83ee26a0bc0d05295331947caf575260"><button class="btn btn-sm btn-line" type="submit">로그아웃</button></form>
+  </div></header>
+<main class="m-main">
+<div class="m-narrow">
+  <div class="steps"><div class="on"></div><div class=""></div><div class=""></div><div class=""></div></div>
+  <h1 class="m-title">외상 이용 신청</h1>
+  <p class="m-sub">신청하면 신용 조회·매출 자료 확인·심사가 진행되고, 결과를 알림톡으로 알려 드립니다.</p>
+    <form method="post" action="/apply" class="stack" id="applyForm"><input type="hidden" name="_csrf" value="83ee26a0bc0d05295331947caf575260">    <section class="card stack">
+      <h2 class="sec-t">1. 본인인증 · 선정산</h2>
+      <div class="field"><span class="lb">본인인증 수단</span>
+        <div class="seg"><label><input type="radio" name="auth_method" value="pass" checked><span>PASS 인증</span></label><label><input type="radio" name="auth_method" value="fincert"><span>금융인증서</span></label></div></div>
+      <div class="field"><span class="lb">페이허그 선정산</span>
+        <div class="seg"><label><input type="radio" name="use_payhug" value="yes" checked><span>이용 중</span></label><label><input type="radio" name="use_payhug" value="join"><span>함께 가입할게요</span></label></div>
+        <small>외상 대금은 페이허그 선정산 지급액에서 차감되므로 선정산 이용이 필요합니다.</small></div>
+      <div class="field" id="midField"><label for="payhug_mid">페이허그 가맹점 번호</label><input class="inp" id="payhug_mid" name="payhug_mid" placeholder="페이허그 앱 > 내 정보에서 확인" maxlength="30"></div>
+    </section>
+    <section class="card stack">
+      <h2 class="sec-t">2. 사업장 정보</h2>
+      <div class="field"><label for="shop_name">상호</label><input class="inp" id="shop_name" name="shop_name" value="" maxlength="40" required></div>
+      <div class="field"><label for="biz_no">사업자등록번호</label><input class="inp num" id="biz_no" name="biz_no" inputmode="numeric" placeholder="000-00-00000" maxlength="12" required></div>
+      <div class="grid2">
+        <div class="field"><label for="sido">지역</label><select class="inp" id="sido" name="sido"><option>부산</option><option>서울</option><option>대구</option><option>인천</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>경기</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option></select></div>
+        <div class="field"><label for="gugun">구·군</label><input class="inp" id="gugun" name="gugun" placeholder="예: 해운대구" maxlength="20"></div>
+      </div>
+      <div class="field"><label for="biz_type">업종</label><select class="inp" id="biz_type" name="biz_type"><option>음식점</option><option>카페</option><option>배달 전문점</option><option>치킨·피자</option><option>베이커리</option><option>주점</option><option>미용·뷰티</option><option>소매</option><option>기타</option></select></div>
+      <div class="field"><span class="lb">주민등록번호 <small>(신용 조회용, 암호화 저장)</small></span>
+        <div class="grid2" style="grid-template-columns:1fr 1fr"><input class="inp num" name="rrn1" inputmode="numeric" maxlength="6" placeholder="앞 6자리" aria-label="주민번호 앞자리" required><input class="inp num" name="rrn2" type="password" inputmode="numeric" maxlength="7" placeholder="뒤 7자리" aria-label="주민번호 뒷자리" required autocomplete="off"></div></div>
+    </section>
+    <section class="card">
+      <h2 class="sec-t">3. 신용정보 동의 <small class="note">서류 ④</small></h2>
+      <label class="check all-agree"><input type="checkbox" id="agreeAll"> <b>필수 항목 전체 동의 (④-1 ~ ④-10)</b></label>
+      <div class="consents">
+              <details class="cs"><summary><label class="check" onclick="event.stopPropagation()"><input type="checkbox" class="req" name="consent[④-1]" value="1"> <span><b>④-1</b> [필수] 개인(신용)정보 수집·이용</span></label><span class="more">보기</span></summary><p>외상 심사·한도 관리·상환 관리를 위해 성명, 연락처, 사업자 정보, 매출 정보를 수집·이용합니다. 보유 기간: 거래 종료 후 5년.</p></details>
+              <details class="cs"><summary><label class="check" onclick="event.stopPropagation()"><input type="checkbox" class="req" name="consent[④-2]" value="1"> <span><b>④-2</b> [필수] 개인(신용)정보 조회 (신용평가회사)</span></label><span class="more">보기</span></summary><p>NICE평가정보·코리아크레딧뷰로(KCB)에서 대표자·개인사업자 신용정보를 조회합니다. 거래 기간 중 매월 재조회합니다.</p></details>
+              <details class="cs"><summary><label class="check" onclick="event.stopPropagation()"><input type="checkbox" class="req" name="consent[④-3]" value="1"> <span><b>④-3</b> [필수] 고유식별정보 처리</span></label><span class="more">보기</span></summary><p>신용 조회와 본인 확인을 위해 주민등록번호·연계정보(CI)를 처리하며 암호화하여 보관합니다.</p></details>
+              <details class="cs"><summary><label class="check" onclick="event.stopPropagation()"><input type="checkbox" class="req" name="consent[④-4]" value="1"> <span><b>④-4</b> [필수] 매출·세무 자료 수집 (스크래핑)</span></label><span class="more">보기</span></summary><p>홈택스·위택스·국민건강보험·여신금융협회·배달앱에서 매출·세금·직원 정보를 자동 수집합니다.</p></details>
+              <details class="cs"><summary><label class="check" onclick="event.stopPropagation()"><input type="checkbox" class="req" name="consent[④-5]" value="1"> <span><b>④-5</b> [필수] 개인(신용)정보 제공 (외주 심사업체)</span></label><span class="more">보기</span></summary><p>수집한 자료를 심사 위탁업체에 제공해 리스크 등급과 권장 한도를 받습니다.</p></details>
+              <details class="cs"><summary><label class="check" onclick="event.stopPropagation()"><input type="checkbox" class="req" name="consent[④-6]" value="1"> <span><b>④-6</b> [필수] 개인(신용)정보 제공 (서울보증보험)</span></label><span class="more">보기</span></summary><p>이행보증 증권 발급·청구를 위해 서울보증보험에 거래 정보를 제공합니다.</p></details>
+              <details class="cs"><summary><label class="check" onclick="event.stopPropagation()"><input type="checkbox" class="req" name="consent[④-7]" value="1"> <span><b>④-7</b> [필수] 페이허그 정산 정보 조회·제공</span></label><span class="more">보기</span></summary><p>페이허그에서 선정산 지급·차감·해지 정보를 받고, 등록·수금 요청 정보를 제공합니다.</p></details>
+              <details class="cs"><summary><label class="check" onclick="event.stopPropagation()"><input type="checkbox" class="req" name="consent[④-8]" value="1"> <span><b>④-8</b> [필수] 정산금 차감 지급 지시</span></label><span class="more">보기</span></summary><p>페이허그 선정산 지급액에서 상환액(하루 지급액의 일정 비율 이내)을 차감해 운영사에 지급하도록 지시합니다.</p></details>
+              <details class="cs"><summary><label class="check" onclick="event.stopPropagation()"><input type="checkbox" class="req" name="consent[④-9]" value="1"> <span><b>④-9</b> [필수] 개인(신용)정보 처리 위탁</span></label><span class="more">보기</span></summary><p>본인인증, 전자계약, 알림톡 발송, 서버 운영 업무를 전문 업체에 위탁합니다.</p></details>
+              <details class="cs"><summary><label class="check" onclick="event.stopPropagation()"><input type="checkbox" class="req" name="consent[④-10]" value="1"> <span><b>④-10</b> [필수] 연체 정보 등록 고지</span></label><span class="more">보기</span></summary><p>상환이 장기간 연체되면 관련 법령에 따라 신용정보집중기관에 연체 정보가 등록될 수 있습니다.</p></details>
+            </div>
+      <p class="note" style="margin:14px 0 6px">선택 항목 (동의하지 않아도 신청할 수 있습니다)</p>
+      <div class="consents">
+              <details class="cs"><summary><label class="check" onclick="event.stopPropagation()"><input type="checkbox" name="consent[opt-1]" value="1"> <span>상품·혜택 안내 수신 (선택)</span></label><span class="more">보기</span></summary><p>외상몰 신상품·할인 소식을 알림톡·문자로 받습니다.</p></details>
+              <details class="cs"><summary><label class="check" onclick="event.stopPropagation()"><input type="checkbox" name="consent[opt-2]" value="1"> <span>서비스 개선을 위한 이용 기록 분석 (선택)</span></label><span class="more">보기</span></summary><p>주문·이용 기록을 통계로 분석해 서비스 개선에 사용합니다.</p></details>
+            </div>
+    </section>
+    <button class="btn btn-p btn-lg btn-block" type="submit">심사 신청하기</button>
+  </form>
+  <script>
+  const all=document.getElementById('agreeAll'),reqs=[...document.querySelectorAll('.req')];
+  all.addEventListener('change',()=>reqs.forEach(c=>c.checked=all.checked));
+  reqs.forEach(c=>c.addEventListener('change',()=>all.checked=reqs.every(x=>x.checked)));
+  document.getElementById('applyForm').addEventListener('submit',e=>{if(!reqs.every(x=>x.checked)){e.preventDefault();alert('필수 동의 항목(④-1~④-10)에 모두 동의해 주세요.');}});
+  document.querySelectorAll('input[name=use_payhug]').forEach(r=>r.addEventListener('change',()=>{document.getElementById('midField').querySelector('small')||0;document.getElementById('payhug_mid').placeholder=r.value==='join'&&r.checked?'가입 후 받은 번호 (모르면 비워 두세요)':'페이허그 앱 > 내 정보에서 확인'}));
+  </script>
+</div>
+</main>
+<script>document.querySelectorAll('[data-confirm]').forEach(f=>f.addEventListener('submit',e=>{if(!confirm(f.dataset.confirm))e.preventDefault()}));</script>
+<div id="static-bar" style="position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:9999;background:#191F28;color:#fff;font:600 13px Pretendard,sans-serif;padding:9px 14px;border-radius:10px;display:flex;gap:12px;align-items:center;box-shadow:0 6px 20px rgba(0,0,0,.18);white-space:nowrap">정적 미리보기 · 저장·결제는 서버 설치 후 동작 <a href="index.html" style="color:#7FE0DC">화면 목록 →</a></div><script>document.addEventListener('submit',e=>{e.preventDefault();const ac=(e.target.getAttribute('action')||'');if(//admin/login$/.test(ac)){location.href='a_admin.html';return}if(/^/login$/.test(ac)){location.href='m_my.html';return}let t=document.getElementById('st-toast');if(!t){t=document.createElement('div');t.id='st-toast';t.style.cssText='position:fixed;left:50%;top:20px;transform:translateX(-50%);z-index:10000;background:#00807D;color:#fff;font:600 14px Pretendard,sans-serif;padding:12px 16px;border-radius:10px';document.body.appendChild(t)}t.textContent='미리보기 화면이라 실제로 저장되지 않습니다. 서버 설치 후 동작합니다.';t.style.display='block';clearTimeout(window.__tt);window.__tt=setTimeout(()=>t.style.display='none',2600)},true);document.querySelectorAll('[data-confirm]').forEach(f=>f.removeAttribute('data-confirm'));</script></body></html>

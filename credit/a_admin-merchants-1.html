@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>해운대 고래카페 · 외상몰 관리자</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/app.css">
+</head><body>
+<div class="a-body">
+<aside class="a-side" id="aside">
+  <a class="logo" href="a_admin.html">Payhug<small>외상몰 관리자</small></a>
+  <nav class="a-nav">
+      <div class="grp">운영</div>
+          <a class="" href="a_admin.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/></svg>대시보드</a>
+          <a class="" href="a_admin-reviews.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>가맹점 심사<span class="ct">1</span></a>
+          <a class="on" href="a_admin-merchants.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16l-1-5H5zM5 9v11h14V9M9 20v-6h6v6"/></svg>가맹점</a>
+          <div class="grp">정산</div>
+          <a class="" href="a_admin-batch.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5zM3 13l9 5 9-5"/></svg>정산 배치</a>
+          <a class="" href="a_admin-deductions.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg>차감 요청</a>
+          <a class="" href="a_admin-ledger.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 21V5"/></svg>원장</a>
+          <a class="" href="a_admin-recon.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h14l-4-4M20 16H6l4 4"/></svg>입금 대사<span class="ct">3</span></a>
+          <a class="" href="a_admin-claims.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></svg>잔액 청구</a>
+          <div class="grp">외상몰</div>
+          <a class="" href="a_admin-orders.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg>주문</a>
+          <a class="" href="a_admin-products.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg>상품</a>
+          <div class="grp">시스템</div>
+          <a class="" href="a_admin-settings.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M21.5 12h-3M5.5 12h-3M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1M18.7 18.7l-2.1-2.1M7.4 7.4 5.3 5.3"/></svg>운영 설정</a>
+          <a class="" href="a_admin-docs.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6"/></svg>서류 문구</a>
+          <a class="" href="a_admin-calendar.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>영업일</a>
+          <a class="" href="a_admin-admins.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.2 6-5.2s5.4 1.8 6 5.2M16 4.8a3 3 0 0 1 0 6.2M18 14.6c1.7.6 2.8 2.2 3 5.4"/></svg>관리자</a>
+          <a class="" href="a_admin-audit.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4.4 3 7.6 7 9 4-1.4 7-4.6 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>감사 로그</a>
+          <a class="" href="a_admin-notifications.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15zM10 20.5a2 2 0 0 0 4 0"/></svg>알림 발송함</a>
+        </nav>
+</aside>
+<div class="a-main">
+  <header class="a-top">
+    <button class="a-burger" type="button" aria-label="메뉴" onclick="document.getElementById('aside').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <h1>해운대 고래카페</h1>
+    <span class="basis">영업일 기준</span>
+    <span class="biz-clock">업무일 2026.11.16 (월)<span class="demo">데모</span></span>
+    <form class="a-search" method="get" action="/admin/merchants" role="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="gsearch" name="q" placeholder="가맹점명, 연락처, 페이허그 번호 검색" aria-label="가맹점 검색"><kbd>Ctrl K</kbd></form>    <div class="who"><span>최고관리자</span><b>최고관리자</b>
+      <form method="post" action="/admin/logout"><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><button class="btn btn-sm btn-line" type="submit">로그아웃</button></form></div>
+  </header>
+  <div class="a-content">
+        <div class="row"><a class="note" href="a_admin-merchants.html">← 가맹점 목록</a></div>
+<div class="kpis">
+  <div class="kpi"><p class="l">잔액 / 한도</p><p class="v num">315,800원</p><p class="s num">한도 8,400,000원 · 남은 한도 8,084,200원</p></div>
+  <div class="kpi "><p class="l">미납(이월)</p><p class="v num">0원</p><p class="s">미납 없음</p></div>
+  <div class="kpi "><p class="l">구매 상태</p><p class="v">정상</p><p class="s">차단 기준: 미납 3영업일</p></div>
+  <div class="kpi"><p class="l">원장 무결성</p><p class="v" style="color:var(--bad)">불일치</p><p class="s num">원장 315,800 · 회차 잔액 156,600</p></div>
+</div>
+<div class="tabs"><a class="on" href="a_admin-merchants-1_tab-summary.html">요약</a><a class="" href="a_admin-merchants-1_tab-installments.html">회차</a><a class="" href="a_admin-merchants-1_tab-ledger.html">원장</a><a class="" href="a_admin-merchants-1_tab-deductions.html">차감 내역</a><a class="" href="a_admin-merchants-1_tab-orders.html">주문</a></div>
+
+<div class="a-grid-eq">
+  <section class="card">
+    <div class="card-h"><h2>가맹점 정보</h2></div>
+    <dl class="dl">
+      <dt>상호</dt><dd>해운대 고래카페</dd><dt>대표자</dt><dd>김정숙</dd>
+      <dt>연락처</dt><dd class="num">010-1111-2222</dd>
+      <dt>사업자번호</dt><dd class="num">612-34-56789</dd><dt>지역·업종</dt><dd>부산 해운대구 · 카페</dd>
+      <dt>페이허그</dt><dd class="num">PH-BS-10021 <span class="bd bd-ok">등록 완료</span></dd><dt>등급·평균매출</dt><dd class="num">2등급 · 일 1,221,000원</dd>
+      <dt>주민번호</dt><dd class="pii">710101-1******</dd>
+      <dt>승인일</dt><dd>2026-11-15 13:39:01</dd>
+    </dl>
+        <form class="inline-form" style="margin-top:14px" method="post" action="/admin/merchants/1/pii"><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input class="inp inp-sm" style="flex:1" name="reason" placeholder="주민번호 열람 사유 (감사 로그에 남습니다)" required><button class="btn btn-sm btn-line" type="submit">열람</button></form>
+        <p class="note" style="margin-top:14px">심사 <a class="lk" href="a_admin-reviews-1.html">#1</a> · 보증 SGI-2026-88000 (8,400,000원, 만기 2027-11-30)</p>  </section>
+  <section class="stack">
+    <div class="card">
+      <div class="card-h"><h3>H-01 페이허그 등록 · E-08 재조회</h3></div>
+                  <form class="inline-form" style="margin-top:8px" method="post" action="/admin/merchants/1/recheck"><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><span class="note" style="flex:1">신용·매출 수시 재조회 (CB 조회 1건 발생)</span><button class="btn btn-sm btn-line" type="submit">지금 재조회</button></form>
+            <div class="tbl-wrap" style="margin-top:10px"><table class="tbl"><thead><tr><th>일시</th><th>구분</th><th>결과</th><th class="r">CB</th><th class="r">일매출</th><th>내용</th></tr></thead><tbody>
+      <tr><td class="num note">2026-11-15 13:39</td><td>정기</td><td><span class="bd bd-ok">이상 없음</span></td><td class="r num">864<span class="note"> / 864</span></td><td class="r num">1,221,000</td><td class="note">2026-11 정기 재조회</td></tr>      </tbody></table></div>      <p class="note" style="margin-top:10px"><span class="num">11-15 13:39</span> 페이허그 등록 · 등록 완료<br><span class="num">11-15 13:39</span> 페이허그 등록 · 등록 요청 중<br></p>            <form method="post" action="/admin/merchants/1/terminate_demo" style="margin-top:10px" data-confirm="[데모] 페이허그 해지 통보를 받은 것으로 처리합니다. 외상 구매가 정지되고 잔액 청구가 등록됩니다. 진행할까요?"><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><button class="btn btn-sm btn-bad" type="submit">[데모] 페이허그 해지 통보</button></form>
+          </div>
+        <div class="card">
+      <div class="card-h"><h3>상환·조정</h3></div>
+      <form class="inline-form" method="post" action="/admin/merchants/1/repay" data-confirm="직접 상환을 반영할까요? 오래된 회차부터 충당됩니다."><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd">        <input class="inp inp-sm num" name="amount" inputmode="numeric" placeholder="상환 금액" style="width:130px" required><input class="inp inp-sm" name="memo" placeholder="예: 하나은행 입금 확인" style="flex:1"><button class="btn btn-sm btn-p" type="submit">직접 상환</button></form>
+      <form class="inline-form" style="margin-top:8px" method="post" action="/admin/merchants/1/adjust" data-confirm="원장을 조정할까요? 감사 로그에 남습니다."><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd">        <input class="inp inp-sm num" name="amount" placeholder="+증액 / -감액" style="width:130px" required><input class="inp inp-sm" name="memo" placeholder="조정 사유 (필수)" style="flex:1" required><button class="btn btn-sm btn-line" type="submit">조정</button></form>
+    </div>
+    <div class="card">
+      <div class="card-h"><h3>구매 정지</h3></div>
+            <form class="inline-form" method="post" action="/admin/merchants/1/block" data-confirm="외상 구매를 정지할까요?"><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input class="inp inp-sm" name="reason" placeholder="수동 정지 사유" style="flex:1" required><button class="btn btn-sm btn-bad" type="submit">수동 정지</button></form>
+          </div>
+            <div class="card"><div class="card-h"><h3>한도 변경</h3></div>
+      <form class="inline-form" method="post" action="/admin/merchants/1/limit"><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input class="inp inp-sm num" name="limit" value="8400000" style="width:140px"><input class="inp inp-sm" name="memo" placeholder="변경 사유" style="flex:1"><button class="btn btn-sm btn-line" type="submit">저장</button></form></div>
+            <div class="card"><div class="card-h"><h3>I-01 잔액 청구</h3></div>
+            <form class="inline-form" style="margin-top:8px" method="post" action="/admin/merchants/1/claim" data-confirm="남은 잔액 전체를 청구하고 알림톡을 보낼까요?"><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input class="inp inp-sm" type="date" name="due_date" aria-label="상환 기한"><input class="inp inp-sm" name="note" placeholder="메모" style="flex:1"><button class="btn btn-sm btn-line" type="submit">잔액 청구</button></form></div>
+      </section>
+</div>
+<section class="card"><div class="card-h"><h3>최근 알림</h3></div>
+  <p class="note" style="padding:6px 0;border-bottom:1px solid var(--line2)">11-15 13:39 · [페이허그 외상몰] 주문 PH2611134D77C0 접수. 외상 159,200원은 배송 완료 다음 영업일부터 20영업일 동안 하루 약 7,960원씩 정산금에서 차감됩니다.</p><p class="note" style="padding:6px 0;border-bottom:1px solid var(--line2)">11-15 13:39 · [페이허그 외상몰] 주문 PH2611106A6DA4 배송이 완료되어 상환 일정이 확정되었습니다. 11월 12일(목)부터 20영업일, 하루 8,700원씩 차감됩니다.</p><p class="note" style="padding:6px 0;border-bottom:1px solid var(--line2)">11-15 13:39 · [페이허그 외상몰] 주문 PH2611106A6DA4 접수. 외상 174,000원은 배송 완료 다음 영업일부터 20영업일 동안 하루 약 8,700원씩 정산금에서 차감됩니다.</p><p class="note" style="padding:6px 0;border-bottom:1px solid var(--line2)">11-15 13:39 · [페이허그 외상몰] 페이허그 등록이 완료되었습니다. 지금부터 한도 8,400,000원 안에서 외상 결제를 이용하실 수 있습니다.</p><p class="note" style="padding:6px 0;border-bottom:1px solid var(--line2)">11-15 13:39 · [페이허그 외상몰] 서류 ①~④ 서명이 완료되었습니다. 페이허그 등록이 끝나면 외상 결제를 이용하실 수 있습니다.</p><p class="note" style="padding:6px 0;border-bottom:1px solid var(--line2)">11-15 13:39 · [페이허그 외상몰] 심사가 완료되었습니다. 한도 8,400,000원. 외상몰에 로그인해 서류 ①~④에 전자서명해 주세요.</p>  </section>
+
+  </div>
+</div>
+</div>
+<script>
+document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){const g=document.getElementById('gsearch');if(g){e.preventDefault();g.focus()}}});
+document.querySelectorAll('[data-confirm]').forEach(f=>f.addEventListener('submit',e=>{if(!confirm(f.dataset.confirm))e.preventDefault()}));
+document.addEventListener('click',e=>{const a=document.getElementById('aside');if(a.classList.contains('open')&&!a.contains(e.target)&&!e.target.closest('.a-burger'))a.classList.remove('open')});
+</script>
+<div id="static-bar" style="position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:9999;background:#191F28;color:#fff;font:600 13px Pretendard,sans-serif;padding:9px 14px;border-radius:10px;display:flex;gap:12px;align-items:center;box-shadow:0 6px 20px rgba(0,0,0,.18);white-space:nowrap">정적 미리보기 · 저장·결제는 서버 설치 후 동작 <a href="index.html" style="color:#7FE0DC">화면 목록 →</a></div><script>document.addEventListener('submit',e=>{e.preventDefault();const ac=(e.target.getAttribute('action')||'');if(//admin/login$/.test(ac)){location.href='a_admin.html';return}if(/^/login$/.test(ac)){location.href='m_my.html';return}let t=document.getElementById('st-toast');if(!t){t=document.createElement('div');t.id='st-toast';t.style.cssText='position:fixed;left:50%;top:20px;transform:translateX(-50%);z-index:10000;background:#00807D;color:#fff;font:600 14px Pretendard,sans-serif;padding:12px 16px;border-radius:10px';document.body.appendChild(t)}t.textContent='미리보기 화면이라 실제로 저장되지 않습니다. 서버 설치 후 동작합니다.';t.style.display='block';clearTimeout(window.__tt);window.__tt=setTimeout(()=>t.style.display='none',2600)},true);document.querySelectorAll('[data-confirm]').forEach(f=>f.removeAttribute('data-confirm'));</script></body></html>

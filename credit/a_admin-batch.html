@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>정산 배치 · 외상몰 관리자</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/app.css">
+</head><body>
+<div class="a-body">
+<aside class="a-side" id="aside">
+  <a class="logo" href="a_admin.html">Payhug<small>외상몰 관리자</small></a>
+  <nav class="a-nav">
+      <div class="grp">운영</div>
+          <a class="" href="a_admin.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/></svg>대시보드</a>
+          <a class="" href="a_admin-reviews.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>가맹점 심사<span class="ct">1</span></a>
+          <a class="" href="a_admin-merchants.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16l-1-5H5zM5 9v11h14V9M9 20v-6h6v6"/></svg>가맹점</a>
+          <div class="grp">정산</div>
+          <a class="on" href="a_admin-batch.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5zM3 13l9 5 9-5"/></svg>정산 배치</a>
+          <a class="" href="a_admin-deductions.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg>차감 요청</a>
+          <a class="" href="a_admin-ledger.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 21V5"/></svg>원장</a>
+          <a class="" href="a_admin-recon.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h14l-4-4M20 16H6l4 4"/></svg>입금 대사<span class="ct">3</span></a>
+          <a class="" href="a_admin-claims.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></svg>잔액 청구</a>
+          <div class="grp">외상몰</div>
+          <a class="" href="a_admin-orders.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg>주문</a>
+          <a class="" href="a_admin-products.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg>상품</a>
+          <div class="grp">시스템</div>
+          <a class="" href="a_admin-settings.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M21.5 12h-3M5.5 12h-3M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1M18.7 18.7l-2.1-2.1M7.4 7.4 5.3 5.3"/></svg>운영 설정</a>
+          <a class="" href="a_admin-docs.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6"/></svg>서류 문구</a>
+          <a class="" href="a_admin-calendar.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>영업일</a>
+          <a class="" href="a_admin-admins.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.2 6-5.2s5.4 1.8 6 5.2M16 4.8a3 3 0 0 1 0 6.2M18 14.6c1.7.6 2.8 2.2 3 5.4"/></svg>관리자</a>
+          <a class="" href="a_admin-audit.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4.4 3 7.6 7 9 4-1.4 7-4.6 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>감사 로그</a>
+          <a class="" href="a_admin-notifications.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15zM10 20.5a2 2 0 0 0 4 0"/></svg>알림 발송함</a>
+        </nav>
+</aside>
+<div class="a-main">
+  <header class="a-top">
+    <button class="a-burger" type="button" aria-label="메뉴" onclick="document.getElementById('aside').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <h1>정산 배치</h1>
+    <span class="basis">영업일 기준</span>
+    <span class="biz-clock">업무일 2026.11.16 (월)<span class="demo">데모</span></span>
+    <form class="a-search" method="get" action="/admin/merchants" role="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="gsearch" name="q" placeholder="가맹점명, 연락처, 페이허그 번호 검색" aria-label="가맹점 검색"><kbd>Ctrl K</kbd></form>    <div class="who"><span>최고관리자</span><b>최고관리자</b>
+      <form method="post" action="/admin/logout"><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><button class="btn btn-sm btn-line" type="submit">로그아웃</button></form></div>
+  </header>
+  <div class="a-content">
+        <div class="row">
+  <form class="filters" method="get"><label class="note" for="bd">기준일</label><input class="inp" type="date" id="bd" name="date" value="2026-11-16"><button class="btn btn-line" type="submit">이동</button></form>
+  <span class="note">11월 16일(월) · 영업일</span>
+  <span class="spacer"></span>
+    <form method="post" action="/admin/batch/run" data-confirm="[데모] 오늘(2026-11-16) 정산 사이클을 모두 실행하고 업무일을 다음 영업일로 넘길까요?"><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input type="hidden" name="date" value="2026-11-16"><input type="hidden" name="act" value="advance"><button class="btn btn-ink" type="submit">[데모] 하루 진행 → 다음 영업일</button></form>
+  </div>
+<section class="card">
+  <div class="card-h"><h2>정산 파이프라인</h2><span class="more">cron이 자동 실행 · 여기서는 수동 실행·재처리</span></div>
+  <div class="pipe">
+        <div class="st">
+      <span class="t">① 일마감 · 24:00</span>
+      <span class="bd">미실행</span>      <div class="stack" style="gap:6px;margin-top:auto">
+      <form method="post" action="/admin/batch/run" ><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input type="hidden" name="date" value="2026-11-16"><input type="hidden" name="act" value="close"><button class="btn btn-sm btn-p btn-block" type="submit">마감 실행</button></form>
+<form method="post" action="/admin/batch/run" data-confirm="이전 영업일의 결과 없는 요청을 실패(0원 차감)로 처리하고 마감합니다. 늦게 도착한 결과는 대사 이슈로 남습니다. 진행할까요?"><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input type="hidden" name="date" value="2026-11-16"><input type="hidden" name="act" value="close_force"><button class="btn btn-sm btn-bad btn-block" type="submit">결과 없음 건 실패 처리 후 마감</button></form>
+      </div>
+    </div>
+        <div class="st">
+      <span class="t">② 페이허그 전송 · 00:30</span>
+      <span class="bd">미실행</span>      <div class="stack" style="gap:6px;margin-top:auto">
+      <form method="post" action="/admin/batch/run" ><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input type="hidden" name="date" value="2026-11-16"><input type="hidden" name="act" value="send"><button class="btn btn-sm btn-p btn-block" type="submit">전송</button></form>
+<form method="post" action="/admin/batch/run" ><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input type="hidden" name="date" value="2026-11-16"><input type="hidden" name="act" value="resend"><button class="btn btn-sm btn-line btn-block" type="submit">실패 건 재전송</button></form>
+      </div>
+    </div>
+        <div class="st">
+      <span class="t">③ 결과 수신 · 06:00~14:00</span>
+      <span class="bd">미실행</span>      <div class="stack" style="gap:6px;margin-top:auto">
+      <form method="post" action="/admin/batch/run" ><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input type="hidden" name="date" value="2026-11-16"><input type="hidden" name="act" value="simulate_payhug"><button class="btn btn-sm btn-line btn-block" type="submit">[데모] 결과 파일 생성</button></form>
+<form method="post" action="/admin/batch/run" ><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input type="hidden" name="date" value="2026-11-16"><input type="hidden" name="act" value="receive"><button class="btn btn-sm btn-p btn-block" type="submit">결과 수신</button></form>
+      </div>
+    </div>
+        <div class="st">
+      <span class="t">④ 재조회 · 14:30</span>
+      <span class="bd">미실행</span>      <div class="stack" style="gap:6px;margin-top:auto">
+      <form method="post" action="/admin/batch/run" ><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input type="hidden" name="date" value="2026-11-16"><input type="hidden" name="act" value="requery"><button class="btn btn-sm btn-p btn-block" type="submit">재조회</button></form>
+      </div>
+    </div>
+        <div class="st">
+      <span class="t">⑤ 입금 대사 · 15:00</span>
+      <span class="bd">미실행</span>      <div class="stack" style="gap:6px;margin-top:auto">
+      <form method="post" action="/admin/batch/run" ><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input type="hidden" name="date" value="2026-11-16"><input type="hidden" name="act" value="reconcile"><button class="btn btn-sm btn-p btn-block" type="submit">대사 실행</button></form>
+      </div>
+    </div>
+      </div>
+  <div class="row" style="margin-top:14px"><form method="post" action="/admin/batch/run" ><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input type="hidden" name="date" value="2026-11-16"><input type="hidden" name="act" value="run_day"><button class="btn btn-sm btn-ink btn-block" type="submit">①~⑤ 한 번에 실행</button></form>
+</div>
+</section>
+<section class="card">
+  <div class="card-h"><h2>페이허그 연동 · 모니터링</h2><span class="more">H-01 등록 · H-05 해지 · E-08 재조회 · 지연 감시</span></div>
+  <div class="pipe">
+        <div class="st">
+      <span class="t">H-01 등록 회신 · 30분마다</span>
+      <span class="bd ">건너뜀</span>
+<span class="note">2026-11-13 · 새 등록 회신 없음</span>      <span class="note">등록 요청 중 <b class="num">0</b>곳</span>      <div class="stack" style="gap:6px;margin-top:auto">
+        <form method="post" action="/admin/batch/run"><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input type="hidden" name="date" value="2026-11-16"><input type="hidden" name="act" value="registrations"><input type="hidden" name="sim" value="1"><button class="btn btn-sm btn-line btn-block" type="submit">[데모] 회신 생성 + 수신</button></form>        <form method="post" action="/admin/batch/run" ><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input type="hidden" name="date" value="2026-11-16"><input type="hidden" name="act" value="registrations"><button class="btn btn-sm btn-p btn-block" type="submit">회신 수신</button></form>
+      </div>
+    </div>
+        <div class="st">
+      <span class="t">H-05 해지 통보 · 30분마다</span>
+      <span class="bd ">건너뜀</span>
+<span class="note">2026-11-13 · 해지 통보 없음</span>            <div class="stack" style="gap:6px;margin-top:auto">
+                <form method="post" action="/admin/batch/run" ><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input type="hidden" name="date" value="2026-11-16"><input type="hidden" name="act" value="terminations"><button class="btn btn-sm btn-p btn-block" type="submit">해지 통보 수신</button></form>
+      </div>
+    </div>
+        <div class="st">
+      <span class="t">지연 감시 · 01:00 · 14:00</span>
+      <span class="bd bd-ok">완료</span>
+<span class="note">2026-11-13 · 지연·누락 없음</span>            <div class="stack" style="gap:6px;margin-top:auto">
+                <form method="post" action="/admin/batch/run" ><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input type="hidden" name="date" value="2026-11-16"><input type="hidden" name="act" value="monitor"><button class="btn btn-sm btn-p btn-block" type="submit">지금 점검</button></form>
+      </div>
+    </div>
+        <div class="st">
+      <span class="t">E-08 정기 재조회 · 매월 첫 영업일</span>
+      <span class="bd bd-ok">완료</span>
+<span class="note">2026-11-02 · 18곳 재조회, 주의·부적격 0곳</span>            <div class="stack" style="gap:6px;margin-top:auto">
+                <form method="post" action="/admin/batch/run" ><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><input type="hidden" name="date" value="2026-11-16"><input type="hidden" name="act" value="recheck"><button class="btn btn-sm btn-p btn-block" type="submit">이번 달 재조회</button></form>
+      </div>
+    </div>
+      </div>
+</section>
+<div class="kpis">
+  <div class="kpi"><p class="l">차감 요청</p><p class="v num">0건</p><p class="s num">0원</p></div>
+  <div class="kpi"><p class="l">차감 결과</p><p class="v num">0원</p><p class="s">전액 0 · 일부 0 · 실패 0</p></div>
+  <div class="kpi "><p class="l">결과 없음</p><p class="v num">0건</p><p class="s">재조회 대상</p></div>
+  <div class="kpi"><p class="l">전송 대기·응답 대기</p><p class="v num">0건</p><p class="s"><a class="lk" href="a_admin-deductions.html">건별 보기 →</a></p></div>
+</div>
+<section class="card" style="padding:6px 0"><div class="card-h" style="padding:14px 18px 0"><h3>배치 실행 이력</h3></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>시작</th><th>배치</th><th>기준일</th><th>결과</th><th class="r">건수</th><th class="r">금액</th><th>내용</th><th>실행</th></tr></thead><tbody>
+<tr><td class="note num">82</td><td class="num">11-15 13:39</td><td>지연·누락 감시</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-13</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>지연·누락 없음</td><td class="note">seed</td></tr><tr><td class="note num">81</td><td class="num">11-15 13:39</td><td>입금 대사</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-13</a></td><td><span class="bd bd-warn">확인 필요</span>
+</td><td class="r num">1</td><td class="r num">-3,000</td><td>불일치 -3,000원</td><td class="note">seed</td></tr><tr><td class="note num">80</td><td class="num">11-15 13:39</td><td>재조회</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-13</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">2</td><td class="r num">51,580</td><td>재조회 2건 반영</td><td class="note">seed</td></tr><tr><td class="note num">79</td><td class="num">11-15 13:39</td><td>결과 수신</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-13</a></td><td><span class="bd bd-warn">확인 필요</span>
+</td><td class="r num">16</td><td class="r num">468,675</td><td>16건 반영, 차감 합계 468,675원, 결과 없음 2건(재조회 필요)</td><td class="note">seed</td></tr><tr><td class="note num">78</td><td class="num">11-15 13:39</td><td>페이허그 전송</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-13</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">18</td><td class="r num">627,635</td><td>18건 627,635원 전송</td><td class="note">seed</td></tr><tr><td class="note num">77</td><td class="num">11-15 13:39</td><td>일마감</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-13</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">18</td><td class="r num">627,635</td><td>11월 13일(금) 마감: 배송 완료 7건 원장 반영(1,061,100원), 차감 요청 18건 생성</td><td class="note">seed</td></tr><tr><td class="note num">76</td><td class="num">11-15 13:39</td><td>해지 통보</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-13</a></td><td><span class="bd ">건너뜀</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>해지 통보 없음</td><td class="note">seed</td></tr><tr><td class="note num">75</td><td class="num">11-15 13:39</td><td>등록 회신</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-13</a></td><td><span class="bd ">건너뜀</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>새 등록 회신 없음</td><td class="note">seed</td></tr><tr><td class="note num">74</td><td class="num">11-15 13:39</td><td>지연·누락 감시</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-12</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>지연·누락 없음</td><td class="note">seed</td></tr><tr><td class="note num">73</td><td class="num">11-15 13:39</td><td>입금 대사</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-12</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">0</td><td class="r num">373,250</td><td>차감 373,250원 = 입금 373,250원</td><td class="note">seed</td></tr><tr><td class="note num">72</td><td class="num">11-15 13:39</td><td>재조회</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-12</a></td><td><span class="bd ">건너뜀</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>재조회할 건이 없습니다.</td><td class="note">seed</td></tr><tr><td class="note num">71</td><td class="num">11-15 13:39</td><td>결과 수신</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-12</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">18</td><td class="r num">373,250</td><td>18건 반영, 차감 합계 373,250원</td><td class="note">seed</td></tr><tr><td class="note num">70</td><td class="num">11-15 13:39</td><td>페이허그 전송</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-12</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">18</td><td class="r num">500,405</td><td>18건 500,405원 전송</td><td class="note">seed</td></tr><tr><td class="note num">69</td><td class="num">11-15 13:39</td><td>일마감</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-12</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">18</td><td class="r num">500,405</td><td>11월 12일(목) 마감: 배송 완료 8건 원장 반영(1,484,700원), 차감 요청 18건 생성</td><td class="note">seed</td></tr><tr><td class="note num">68</td><td class="num">11-15 13:39</td><td>해지 통보</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-12</a></td><td><span class="bd ">건너뜀</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>해지 통보 없음</td><td class="note">seed</td></tr><tr><td class="note num">67</td><td class="num">11-15 13:39</td><td>등록 회신</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-12</a></td><td><span class="bd ">건너뜀</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>새 등록 회신 없음</td><td class="note">seed</td></tr><tr><td class="note num">66</td><td class="num">11-15 13:39</td><td>지연·누락 감시</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-11</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>지연·누락 없음</td><td class="note">seed</td></tr><tr><td class="note num">65</td><td class="num">11-15 13:39</td><td>입금 대사</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-11</a></td><td><span class="bd bd-warn">확인 필요</span>
+</td><td class="r num">1</td><td class="r num">-3,000</td><td>불일치 -3,000원</td><td class="note">seed</td></tr><tr><td class="note num">64</td><td class="num">11-15 13:39</td><td>재조회</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-11</a></td><td><span class="bd ">건너뜀</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>재조회할 건이 없습니다.</td><td class="note">seed</td></tr><tr><td class="note num">63</td><td class="num">11-15 13:39</td><td>결과 수신</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-11</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">17</td><td class="r num">384,570</td><td>17건 반영, 차감 합계 384,570원</td><td class="note">seed</td></tr><tr><td class="note num">62</td><td class="num">11-15 13:39</td><td>페이허그 전송</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-11</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">17</td><td class="r num">458,730</td><td>17건 458,730원 전송</td><td class="note">seed</td></tr><tr><td class="note num">61</td><td class="num">11-15 13:39</td><td>일마감</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-11</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">17</td><td class="r num">458,730</td><td>11월 11일(수) 마감: 배송 완료 8건 원장 반영(1,257,100원), 차감 요청 17건 생성</td><td class="note">seed</td></tr><tr><td class="note num">60</td><td class="num">11-15 13:39</td><td>해지 통보</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-11</a></td><td><span class="bd ">건너뜀</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>해지 통보 없음</td><td class="note">seed</td></tr><tr><td class="note num">59</td><td class="num">11-15 13:39</td><td>등록 회신</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-11</a></td><td><span class="bd ">건너뜀</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>새 등록 회신 없음</td><td class="note">seed</td></tr><tr><td class="note num">58</td><td class="num">11-15 13:39</td><td>지연·누락 감시</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-10</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>지연·누락 없음</td><td class="note">seed</td></tr><tr><td class="note num">57</td><td class="num">11-15 13:39</td><td>입금 대사</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-10</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">0</td><td class="r num">241,880</td><td>차감 241,880원 = 입금 241,880원</td><td class="note">seed</td></tr><tr><td class="note num">56</td><td class="num">11-15 13:39</td><td>재조회</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-10</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">2</td><td class="r num">11,115</td><td>재조회 2건 반영</td><td class="note">seed</td></tr><tr><td class="note num">55</td><td class="num">11-15 13:39</td><td>결과 수신</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-10</a></td><td><span class="bd bd-warn">확인 필요</span>
+</td><td class="r num">14</td><td class="r num">230,765</td><td>14건 반영, 차감 합계 230,765원, 결과 없음 2건(재조회 필요)</td><td class="note">seed</td></tr><tr><td class="note num">54</td><td class="num">11-15 13:39</td><td>페이허그 전송</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-10</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">16</td><td class="r num">337,220</td><td>16건 337,220원 전송</td><td class="note">seed</td></tr><tr><td class="note num">53</td><td class="num">11-15 13:39</td><td>일마감</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-10</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">16</td><td class="r num">337,220</td><td>11월 10일(화) 마감: 배송 완료 7건 원장 반영(1,017,800원), 차감 요청 16건 생성</td><td class="note">seed</td></tr><tr><td class="note num">52</td><td class="num">11-15 13:39</td><td>해지 통보</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-10</a></td><td><span class="bd ">건너뜀</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>해지 통보 없음</td><td class="note">seed</td></tr><tr><td class="note num">51</td><td class="num">11-15 13:39</td><td>등록 회신</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-10</a></td><td><span class="bd ">건너뜀</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>새 등록 회신 없음</td><td class="note">seed</td></tr><tr><td class="note num">50</td><td class="num">11-15 13:39</td><td>지연·누락 감시</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-09</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>지연·누락 없음</td><td class="note">seed</td></tr><tr><td class="note num">49</td><td class="num">11-15 13:39</td><td>입금 대사</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-09</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">0</td><td class="r num">270,420</td><td>차감 270,420원 = 입금 270,420원</td><td class="note">seed</td></tr><tr><td class="note num">48</td><td class="num">11-15 13:39</td><td>재조회</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-09</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">2</td><td class="r num">81,625</td><td>재조회 2건 반영</td><td class="note">seed</td></tr><tr><td class="note num">47</td><td class="num">11-15 13:39</td><td>결과 수신</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-09</a></td><td><span class="bd bd-warn">확인 필요</span>
+</td><td class="r num">14</td><td class="r num">188,795</td><td>14건 반영, 차감 합계 188,795원, 결과 없음 2건(재조회 필요)</td><td class="note">seed</td></tr><tr><td class="note num">46</td><td class="num">11-15 13:39</td><td>페이허그 전송</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-09</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">16</td><td class="r num">295,140</td><td>16건 295,140원 전송</td><td class="note">seed</td></tr><tr><td class="note num">45</td><td class="num">11-15 13:39</td><td>일마감</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-09</a></td><td><span class="bd bd-ok">완료</span>
+</td><td class="r num">16</td><td class="r num">295,140</td><td>11월 9일(월) 마감: 배송 완료 5건 원장 반영(901,600원), 차감 요청 16건 생성</td><td class="note">seed</td></tr><tr><td class="note num">44</td><td class="num">11-15 13:39</td><td>해지 통보</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-09</a></td><td><span class="bd ">건너뜀</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>해지 통보 없음</td><td class="note">seed</td></tr><tr><td class="note num">43</td><td class="num">11-15 13:39</td><td>등록 회신</td><td class="num"><a class="lk" href="a_admin-batch.html">2026-11-09</a></td><td><span class="bd ">건너뜀</span>
+</td><td class="r num">0</td><td class="r num">0</td><td>새 등록 회신 없음</td><td class="note">seed</td></tr></tbody></table></div></section>
+  </div>
+</div>
+</div>
+<script>
+document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){const g=document.getElementById('gsearch');if(g){e.preventDefault();g.focus()}}});
+document.querySelectorAll('[data-confirm]').forEach(f=>f.addEventListener('submit',e=>{if(!confirm(f.dataset.confirm))e.preventDefault()}));
+document.addEventListener('click',e=>{const a=document.getElementById('aside');if(a.classList.contains('open')&&!a.contains(e.target)&&!e.target.closest('.a-burger'))a.classList.remove('open')});
+</script>
+<div id="static-bar" style="position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:9999;background:#191F28;color:#fff;font:600 13px Pretendard,sans-serif;padding:9px 14px;border-radius:10px;display:flex;gap:12px;align-items:center;box-shadow:0 6px 20px rgba(0,0,0,.18);white-space:nowrap">정적 미리보기 · 저장·결제는 서버 설치 후 동작 <a href="index.html" style="color:#7FE0DC">화면 목록 →</a></div><script>document.addEventListener('submit',e=>{e.preventDefault();const ac=(e.target.getAttribute('action')||'');if(//admin/login$/.test(ac)){location.href='a_admin.html';return}if(/^/login$/.test(ac)){location.href='m_my.html';return}let t=document.getElementById('st-toast');if(!t){t=document.createElement('div');t.id='st-toast';t.style.cssText='position:fixed;left:50%;top:20px;transform:translateX(-50%);z-index:10000;background:#00807D;color:#fff;font:600 14px Pretendard,sans-serif;padding:12px 16px;border-radius:10px';document.body.appendChild(t)}t.textContent='미리보기 화면이라 실제로 저장되지 않습니다. 서버 설치 후 동작합니다.';t.style.display='block';clearTimeout(window.__tt);window.__tt=setTimeout(()=>t.style.display='none',2600)},true);document.querySelectorAll('[data-confirm]').forEach(f=>f.removeAttribute('data-confirm'));</script></body></html>

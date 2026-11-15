@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>심사 상세 · 외상몰 관리자</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/app.css">
+</head><body>
+<div class="a-body">
+<aside class="a-side" id="aside">
+  <a class="logo" href="a_admin.html">Payhug<small>외상몰 관리자</small></a>
+  <nav class="a-nav">
+      <div class="grp">운영</div>
+          <a class="" href="a_admin.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/></svg>대시보드</a>
+          <a class="on" href="a_admin-reviews.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>가맹점 심사<span class="ct">1</span></a>
+          <a class="" href="a_admin-merchants.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16l-1-5H5zM5 9v11h14V9M9 20v-6h6v6"/></svg>가맹점</a>
+          <div class="grp">정산</div>
+          <a class="" href="a_admin-batch.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5zM3 13l9 5 9-5"/></svg>정산 배치</a>
+          <a class="" href="a_admin-deductions.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg>차감 요청</a>
+          <a class="" href="a_admin-ledger.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 21V5"/></svg>원장</a>
+          <a class="" href="a_admin-recon.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h14l-4-4M20 16H6l4 4"/></svg>입금 대사<span class="ct">3</span></a>
+          <a class="" href="a_admin-claims.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></svg>잔액 청구</a>
+          <div class="grp">외상몰</div>
+          <a class="" href="a_admin-orders.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg>주문</a>
+          <a class="" href="a_admin-products.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg>상품</a>
+          <div class="grp">시스템</div>
+          <a class="" href="a_admin-settings.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M21.5 12h-3M5.5 12h-3M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1M18.7 18.7l-2.1-2.1M7.4 7.4 5.3 5.3"/></svg>운영 설정</a>
+          <a class="" href="a_admin-docs.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6"/></svg>서류 문구</a>
+          <a class="" href="a_admin-calendar.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>영업일</a>
+          <a class="" href="a_admin-admins.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.2 6-5.2s5.4 1.8 6 5.2M16 4.8a3 3 0 0 1 0 6.2M18 14.6c1.7.6 2.8 2.2 3 5.4"/></svg>관리자</a>
+          <a class="" href="a_admin-audit.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4.4 3 7.6 7 9 4-1.4 7-4.6 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>감사 로그</a>
+          <a class="" href="a_admin-notifications.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15zM10 20.5a2 2 0 0 0 4 0"/></svg>알림 발송함</a>
+        </nav>
+</aside>
+<div class="a-main">
+  <header class="a-top">
+    <button class="a-burger" type="button" aria-label="메뉴" onclick="document.getElementById('aside').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <h1>심사 상세</h1>
+    <span class="basis">영업일 기준</span>
+    <span class="biz-clock">업무일 2026.11.16 (월)<span class="demo">데모</span></span>
+    <form class="a-search" method="get" action="/admin/merchants" role="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="gsearch" name="q" placeholder="가맹점명, 연락처, 페이허그 번호 검색" aria-label="가맹점 검색"><kbd>Ctrl K</kbd></form>    <div class="who"><span>최고관리자</span><b>최고관리자</b>
+      <form method="post" action="/admin/logout"><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd"><button class="btn btn-sm btn-line" type="submit">로그아웃</button></form></div>
+  </header>
+  <div class="a-content">
+        <div class="row"><a class="note" href="a_admin-reviews.html">← 심사 목록</a></div>
+<div class="a-grid2">
+  <section class="card">
+    <div class="card-h"><h2>광안리 해물칼국수</h2><span class="bd bd-ok">승인</span><a class="more" href="a_admin-merchants-3.html">가맹점 상세 →</a></div>
+    <dl class="dl">
+      <dt>대표자</dt><dd>이영희 · 010-****-4444</dd>
+      <dt>사업자번호</dt><dd class="num">632-34-56782</dd>
+      <dt>지역·업종</dt><dd>부산 수영구 · 음식점</dd>
+      <dt>페이허그 가맹점</dt><dd class="num">PH-BS-11003</dd>
+      <dt>주민번호</dt><dd class="pii">710175-1****** <span class="note">(암호화 저장)</span></dd>
+    </dl>
+    <div class="card-h" style="margin-top:22px"><h3>자동 조회 결과</h3><span class="more">외부 연동 가짜 응답</span></div>
+    <div class="tbl-wrap"><table class="tbl"><thead><tr><th>항목</th><th>결과</th><th>조회 번호</th></tr></thead><tbody>
+      <tr><td>E-01 본인인증</td><td><span class="bd bd-ok">완료</span></td><td class="mono">PASS-a84fc51f</td></tr>
+      <tr><td>E-03 신용평가(CB)</td><td class="num"><b>655점</b> · 6등급</td><td class="mono">CB-2ED014B4</td></tr>
+      <tr><td>E-04 매출 스크래핑</td><td class="num">일평균 <b>1,071,000원</b> (6개월)</td><td class="mono">SCR-7059609E</td></tr>
+      <tr><td>E-05 외주 심사</td><td>추가 검토 · 추천 한도 <b class="num">3,200,000원</b></td><td class="mono">VD-7FDBE2B9</td></tr>
+    </tbody></table></div>
+    <div class="card-h" style="margin-top:22px"><h3>E-06 심사 엔진 판정</h3><span class="bd bd-warn">미달</span></div>
+        <div class="formula">
+      <div><span class="note">월 카드매출</span><b class="num">23,133,600원</b></div><i>×</i>
+      <div><span class="note">6등급 비율</span><b class="num">10%</b></div><i>→</i>
+      <div><span class="note">산식 한도 (10만원 버림)</span><b class="num">2,300,000원</b></div><i>vs</i>
+      <div><span class="note">외주 권장</span><b class="num">3,200,000원</b></div><i>=</i>
+      <div class="hl"><span class="note">엔진 한도</span><b class="num">2,300,000원</b></div>
+    </div>
+    <p class="note" style="margin-top:8px">통과: 1~4등급 + 외주 승인 추천 · 미달: 5~6등급 또는 외주 추가 검토 · 반려: 연체 정보 또는 외주 거절</p>
+    <p class="note" style="margin-top:8px">E-04 수집처: 홈택스(부가세 신고) 수집 · 위택스(지방세) 수집 · 건강보험(직원 수) 수집 · 여신금융협회(카드 매출) 수집 · 배달앱(배민·쿠팡이츠·요기요) 수집</p>
+    <div class="card-h" style="margin-top:22px"><h3>E-01·E-02 본인인증 · 동의</h3><span class="more">PASS · 2026-11-15 13:39 · IP cli</span></div>
+    <div class="chips"><span class="chip on" title="개인(신용)정보 수집·이용">✓ ④-1</span><span class="chip on" title="개인(신용)정보 조회 (신용평가회사)">✓ ④-2</span><span class="chip on" title="고유식별정보 처리">✓ ④-3</span><span class="chip on" title="매출·세무 자료 수집 (스크래핑)">✓ ④-4</span><span class="chip on" title="개인(신용)정보 제공 (외주 심사업체)">✓ ④-5</span><span class="chip on" title="개인(신용)정보 제공 (서울보증보험)">✓ ④-6</span><span class="chip on" title="페이허그 정산 정보 조회·제공">✓ ④-7</span><span class="chip on" title="정산금 차감 지급 지시">✓ ④-8</span><span class="chip on" title="개인(신용)정보 처리 위탁">✓ ④-9</span><span class="chip on" title="연체 정보 등록 고지">✓ ④-10</span><span class="chip " title="상품·혜택 안내 수신 (선택)">– 선택 1</span><span class="chip " title="서비스 개선을 위한 이용 기록 분석 (선택)">– 선택 2</span></div>
+    <p class="note" style="margin-top:6px">선정산: 이용 중</p>
+    <p class="note" style="margin-top:14px">결정 2026-11-15 13:39:01 · 최고관리자 · 데모 자동 승인</p>  </section>
+  <section class="stack">
+    <div class="card">
+      <div class="card-h"><h3>E-07 서울보증 증권</h3><span class="bd bd-ok">등록됨</span></div>
+      <form method="post" action="/admin/reviews/3/guarantee" class="stack"><input type="hidden" name="_csrf" value="b86e8ccc4d2454c541738939817018bd">        <div class="field"><label for="gno">증권번호</label><input class="inp" id="gno" name="guarantee_no" value="SGI-2026-88002" disabled></div>
+        <div class="grid2"><div class="field"><label for="gamt">보증금액</label><input class="inp num" id="gamt" name="guarantee_amount" inputmode="numeric" value="2300000" disabled></div>
+        <div class="field"><label for="gexp">만기일</label><input class="inp" type="date" id="gexp" name="guarantee_expiry" value="2027-11-30" disabled></div></div>
+              </form>
+    </div>
+    <div class="card">
+      <div class="card-h"><h3>심사 결정 · F-01 전자계약</h3><span class="bd bd-ok">서명 완료</span></div>
+              <p>서명 완료 2026-11-15 13:39:01 · 한도 <b class="num">2,300,000원</b> · 페이허그 <span class="bd bd-ok">등록 완료</span></p>
+          </div>
+        <div class="card">
+      <div class="card-h"><h3>F-02·F-04 서명 증거</h3><span class="more">열람·다운로드는 감사 로그에 기록</span></div>
+      <div class="tbl-wrap"><table class="tbl"><thead><tr><th>서류</th><th>버전</th><th>방식</th><th>일시 · IP</th><th>SHA-256</th><th></th></tr></thead><tbody>
+      <tr><td><b>①</b></td><td class="num">v1</td><td>전자 · PASS</td>
+        <td class="num note">2026-11-15 13:39<br>211.234.10.22</td><td class="mono note" title="4a548b5640766931b719cf36a473c38285dc0ebbddebf46dd21e0787574dbdb9">4a548b5640766931…</td>
+        <td class="r"><a class="btn btn-sm btn-line" href="a_admin-signatures-9.html" target="_blank" rel="noopener">열람</a> <a class="btn btn-sm btn-line" href="a_admin-signatures-9.html">받기</a></td></tr><tr><td><b>②</b></td><td class="num">v1</td><td>전자 · PASS</td>
+        <td class="num note">2026-11-15 13:39<br>211.234.10.22</td><td class="mono note" title="4aab9c210a48094b74eb0a076a8fb44df3c2b797b3216986c3b3431cbc114bf5">4aab9c210a48094b…</td>
+        <td class="r"><a class="btn btn-sm btn-line" href="a_admin-signatures-10.html" target="_blank" rel="noopener">열람</a> <a class="btn btn-sm btn-line" href="a_admin-signatures-10.html">받기</a></td></tr><tr><td><b>③</b></td><td class="num">v1</td><td>전자 · PASS</td>
+        <td class="num note">2026-11-15 13:39<br>211.234.10.22</td><td class="mono note" title="ddccd1c4d46de26be2449e884241720bcc79949d371f54d52e345c6d09c9443d">ddccd1c4d46de26b…</td>
+        <td class="r"><a class="btn btn-sm btn-line" href="a_admin-signatures-11.html" target="_blank" rel="noopener">열람</a> <a class="btn btn-sm btn-line" href="a_admin-signatures-11.html">받기</a></td></tr><tr><td><b>④</b></td><td class="num">v1</td><td>전자 · PASS</td>
+        <td class="num note">2026-11-15 13:39<br>211.234.10.22</td><td class="mono note" title="604e1a38fa4a296d53d8a6a1d31abedde8a6dc74235c831cfa2b9294819301ea">604e1a38fa4a296d…</td>
+        <td class="r"><a class="btn btn-sm btn-line" href="a_admin-signatures-12.html" target="_blank" rel="noopener">열람</a> <a class="btn btn-sm btn-line" href="a_admin-signatures-12.html">받기</a></td></tr>      </tbody></table></div>
+      <p class="note" style="margin-top:8px">전자서명 업체 원본(PDF) 연동 전까지는 서명 시점 HTML 사본 + 해시로 보관합니다.</p>
+    </div>
+      </section>
+</div>
+  </div>
+</div>
+</div>
+<script>
+document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){const g=document.getElementById('gsearch');if(g){e.preventDefault();g.focus()}}});
+document.querySelectorAll('[data-confirm]').forEach(f=>f.addEventListener('submit',e=>{if(!confirm(f.dataset.confirm))e.preventDefault()}));
+document.addEventListener('click',e=>{const a=document.getElementById('aside');if(a.classList.contains('open')&&!a.contains(e.target)&&!e.target.closest('.a-burger'))a.classList.remove('open')});
+</script>
+<div id="static-bar" style="position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:9999;background:#191F28;color:#fff;font:600 13px Pretendard,sans-serif;padding:9px 14px;border-radius:10px;display:flex;gap:12px;align-items:center;box-shadow:0 6px 20px rgba(0,0,0,.18);white-space:nowrap">정적 미리보기 · 저장·결제는 서버 설치 후 동작 <a href="index.html" style="color:#7FE0DC">화면 목록 →</a></div><script>document.addEventListener('submit',e=>{e.preventDefault();const ac=(e.target.getAttribute('action')||'');if(//admin/login$/.test(ac)){location.href='a_admin.html';return}if(/^/login$/.test(ac)){location.href='m_my.html';return}let t=document.getElementById('st-toast');if(!t){t=document.createElement('div');t.id='st-toast';t.style.cssText='position:fixed;left:50%;top:20px;transform:translateX(-50%);z-index:10000;background:#00807D;color:#fff;font:600 14px Pretendard,sans-serif;padding:12px 16px;border-radius:10px';document.body.appendChild(t)}t.textContent='미리보기 화면이라 실제로 저장되지 않습니다. 서버 설치 후 동작합니다.';t.style.display='block';clearTimeout(window.__tt);window.__tt=setTimeout(()=>t.style.display='none',2600)},true);document.querySelectorAll('[data-confirm]').forEach(f=>f.removeAttribute('data-confirm'));</script></body></html>
